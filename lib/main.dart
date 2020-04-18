@@ -7,6 +7,7 @@ import 'package:flutter/painting.dart';
 //my own import
 //import './Components/horizontal_listview.dart';
 import 'package:shopapp/Components/horizontal_listview.dart';
+import 'package:shopapp/Components/products.dart';
 
 void main(){
   runApp(
@@ -148,6 +149,17 @@ class _HomePageState extends State<HomePage> {
 
           //Horizontal List view begin here
           HorizontalList(),
+
+          //padding widget
+          new Padding(padding: const EdgeInsets.all(20.0),
+          child: new Text('Reccent Products'),
+          ),
+
+          //grid view
+          Container(
+            height: 320,
+            child: Products(),
+          )
 
 
         ]
