@@ -14,4 +14,4 @@
     - flutter
     
 # Shopapp Credit By Santos Enoque
-Thank you youtube channel Santos Enoque
+Thank you youtube channel : https://www.youtube.com/channel/UCRl79zOEtiLCglAFZJJzEZQ
