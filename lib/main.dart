@@ -8,6 +8,7 @@ import 'package:flutter/painting.dart';
 //import './Components/horizontal_listview.dart';
 import 'package:shopapp/Components/horizontal_listview.dart';
 import 'package:shopapp/Components/products.dart';
+import 'package:shopapp/pages/cart.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -54,7 +55,10 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.search, color: Colors.white), onPressed: () {}),
           new IconButton(
               icon: Icon(Icons.shopping_cart, color: Colors.white),
-              onPressed: () {})
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => new Cart()));
+              })
         ],
       ),
 
@@ -105,7 +109,10 @@ class _HomePageState extends State<HomePage> {
         ),
 
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => new Cart()));
+          },
           child: ListTile(
               title: Text('Shopping Cart'),
               leading: Icon(

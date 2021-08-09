@@ -73,23 +73,34 @@ class Single_prod extends StatelessWidget {
             tag: new Text("hero 1"),
             child: Material(
               child: InkWell(
-                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new ProductDetails(
-                    product_detail_name: prod_name,
-                    product_detail_new_price: prod_price,
-                    product_detail_old_price: prod_old_price,
-                    product_detail_picture: prod_picture,
-                  ))),
+                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                      builder: (context) => new ProductDetails(
+                            product_detail_name: prod_name,
+                            product_detail_new_price: prod_price,
+                            product_detail_old_price: prod_old_price,
+                            product_detail_picture: prod_picture,
+                          ))),
                   child: GridTile(
                     footer: Container(
-                      color: Colors.white,
-                      child: new Row(children: <Widget>[
-                        Expanded(
-                          child: Text(prod_name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),),
-                        ),
-
-                        new Text("\$$prod_old_price", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),)
-                      ],)
-                    ),
+                        color: Colors.white,
+                        child: new Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Text(
+                                prod_name,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16.0),
+                              ),
+                            ),
+                            new Text(
+                              "\$$prod_old_price",
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        )),
                     child: Image.asset(
                       prod_picture,
                       fit: BoxFit.cover,

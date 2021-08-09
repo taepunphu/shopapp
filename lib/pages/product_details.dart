@@ -24,7 +24,10 @@ class _ProductDetailsState extends State<ProductDetails> {
       appBar: new AppBar(
         elevation: 0.1,
         title: InkWell(
-            onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> new HomePage()));},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => new HomePage()));
+            },
             child: Text('Flashapp')),
         backgroundColor: Colors.red,
         actions: <Widget>[
@@ -290,7 +293,7 @@ class _Similar_productsState extends State<Similar_products> {
     return GridView.builder(
       itemCount: product_list.length,
       gridDelegate:
-      new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (BuildContext coontext, int index) {
         return Similar_Single_prod(
           prod_name: product_list[index]['name'],
@@ -311,9 +314,9 @@ class Similar_Single_prod extends StatelessWidget {
 
   Similar_Single_prod(
       {this.prod_name,
-        this.prod_picture,
-        this.prod_old_price,
-        this.prod_price});
+      this.prod_picture,
+      this.prod_old_price,
+      this.prod_price});
 
   @override
   Widget build(BuildContext context) {
@@ -322,23 +325,34 @@ class Similar_Single_prod extends StatelessWidget {
             tag: new Text("hero 1"),
             child: Material(
               child: InkWell(
-                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new ProductDetails(
-                    product_detail_name: prod_name,
-                    product_detail_new_price: prod_price,
-                    product_detail_old_price: prod_old_price,
-                    product_detail_picture: prod_picture,
-                  ))),
+                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                      builder: (context) => new ProductDetails(
+                            product_detail_name: prod_name,
+                            product_detail_new_price: prod_price,
+                            product_detail_old_price: prod_old_price,
+                            product_detail_picture: prod_picture,
+                          ))),
                   child: GridTile(
                     footer: Container(
                         color: Colors.white,
-                        child: new Row(children: <Widget>[
-                          Expanded(
-                            child: Text(prod_name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),),
-                          ),
-
-                          new Text("\$$prod_old_price", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),)
-                        ],)
-                    ),
+                        child: new Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Text(
+                                prod_name,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16.0),
+                              ),
+                            ),
+                            new Text(
+                              "\$$prod_old_price",
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        )),
                     child: Image.asset(
                       prod_picture,
                       fit: BoxFit.cover,
@@ -347,4 +361,3 @@ class Similar_Single_prod extends StatelessWidget {
             )));
   }
 }
-
